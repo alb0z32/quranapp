@@ -28,7 +28,6 @@ const fetchData = async (url) => {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data)
         return data;
     } catch (e) {
         console.log(e);
@@ -41,7 +40,6 @@ function searchAyah(arg) {
     if(ayahregex == undefined){
         return errortext.innerText = "Invalid Arguments!"
     }
-    console.log(editionregex)
     let edition = "en.sahih";
     if (editionregex?.length > 0) {
         switch (editionregex) {
