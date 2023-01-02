@@ -15,6 +15,7 @@
     height: 100vh;
     background-color: rgb(224, 248, 255);
     padding: 10px;
+    overflow-y:auto;
 }
 img{
     width: 15%;
