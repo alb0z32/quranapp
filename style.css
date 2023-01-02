@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans',sans-serif;
+}
+#web-title{
+    color: #323232;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(224, 248, 255);
+    padding: 10px;
+}
+img{
+    width: 15%;
+    display: block;
+    margin: 10px auto;
+}
+.form-control{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-control-center{
+    width: 90%;
+    max-width: 1000px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#note{
+    margin: 10px;
+    color: rgba(50, 50, 50,0.3);
+}
+.form-control-center > input{
+    padding: 5px;
+}
+.form-control-center > button{
+    margin: 5px;
+    padding: 5px;
+}
+#result{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.result-center{
+    width: 100%;
+    max-width: 1250px;
+}
+#surah-name{
+    color: #323232;
+    text-align: center;
+}
+#surah-name-ar{
+    color: #323232;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans Arabic', sans-serif;
+}
+#tran-edit{
+    color: #323232;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.number{
+    color: #727272;
+    font-size: 15pt;
+}
+.text{
+    color: #323232;
+    font-weight: bold;
+    font-size: 20pt;
+}
