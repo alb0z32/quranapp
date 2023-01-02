@@ -36,7 +36,7 @@ const fetchData = async (url) => {
 
 }
 function searchAyah(arg) {
-    let ayahregex = arg.replace(/[^[\d:-]/g, "");
+    let ayahregex = arg.match(/[\d:-]/g)?.join("");
     let editionregex = arg.match(/[a-zA-Z]/g)?.join("").toLowerCase();
     if(ayahregex == undefined){
         return errortext.innerText = "Invalid Arguments!"
@@ -91,7 +91,7 @@ function searchAyah(arg) {
         return errortext.innerText = "Invalid Arguments!";
     }
     const ayahArr = [];
-    if(startingAyah > endingAyah) return console.log("Invalid Arguments");
+    if(Number(startingAyah) > Number(endingAyah)) return console.log("Invalid Arguments");
     if(endingAyah == null){ 
         const data = fetchData(`https://api.alquran.cloud/v1/ayah/${surah}:${startingAyah}/editions/${edition}`)
         data.then(res=>{
@@ -105,7 +105,7 @@ function searchAyah(arg) {
             return errortext.innerText = "Invalid Arguments!";
         })
     } else {
-        for(let i = startingAyah;i<=endingAyah;i++){
+        for(let i = Number(startingAyah);i<=Number(endingAyah);i++){
             const data = fetchData(`https://api.alquran.cloud/v1/ayah/${surah}:${i}/editions/${edition}`)
             data.then(res=>{
                 res.data.forEach(text=>{
