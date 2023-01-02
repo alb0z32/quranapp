@@ -93,7 +93,7 @@ function searchAyah(arg) {
     const ayahArr = [];
     if(startingAyah > endingAyah) return console.log("Invalid Arguments");
     if(endingAyah == null){ 
-        const data = fetchData(`http://api.alquran.cloud/v1/ayah/${surah}:${startingAyah}/editions/${edition}`)
+        const data = fetchData(`https://api.alquran.cloud/v1/ayah/${surah}:${startingAyah}/editions/${edition}`)
         data.then(res=>{
             res.data.forEach(text=>{
                 const theayah = {ayah:text.text,ayahdesc:`${surah}:${startingAyah}`}
@@ -106,7 +106,7 @@ function searchAyah(arg) {
         })
     } else {
         for(let i = startingAyah;i<=endingAyah;i++){
-            const data = fetchData(`http://api.alquran.cloud/v1/ayah/${surah}:${i}/editions/${edition}`)
+            const data = fetchData(`https://api.alquran.cloud/v1/ayah/${surah}:${i}/editions/${edition}`)
             data.then(res=>{
                 res.data.forEach(text=>{
                     const theayah = {ayah:text.text,ayahdesc:`${surah}:${i}`}
@@ -119,7 +119,7 @@ function searchAyah(arg) {
             })
         }
     }
-    const verseDesc = fetchData(`http://api.alquran.cloud/v1/ayah/${surah}:${startingAyah}/editions/${edition}`);
+    const verseDesc = fetchData(`https://api.alquran.cloud/v1/ayah/${surah}:${startingAyah}/editions/${edition}`);
     verseDesc.then(res=>{
         const {edition,surah} = res.data[0]
         // console.log(edition)
